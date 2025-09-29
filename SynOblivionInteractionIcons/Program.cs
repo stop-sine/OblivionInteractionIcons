@@ -67,8 +67,8 @@ namespace SynOblivionInteractionIcons
                 string iconCharacter = "Q"; // Default
                 string? iconColor = null;
 
-                var name = flora.Name != null ? flora.Name.String : null;
-                var activateTextOverride = flora.ActivateTextOverride != null ? flora.ActivateTextOverride.String : null;
+                var name = flora.Name?.String;
+                var activateTextOverride = flora.ActivateTextOverride?.String;
 
                 // Mushrooms
                 if (flora.HarvestSound.FormKey.Equals(Skyrim.SoundDescriptor.ITMIngredientMushroomUp.FormKey)
@@ -130,12 +130,12 @@ namespace SynOblivionInteractionIcons
                 string iconCharacter = "W"; // Default
                 string? iconColor = null;
 
-                var name = activator.Name != null ? activator.Name.String : null;
-                var editorId = activator.EditorID != null ? activator.EditorID.ToString() : null;
-                var activateTextOverride = activator.ActivateTextOverride != null ? activator.ActivateTextOverride.String : null;
+                var name = activator.Name?.String;
+                var editorId = activator.EditorID?.ToString();
+                var activateTextOverride = activator.ActivateTextOverride?.String;
 
                 //Blacklisting superfluos entries
-                if (activator.ActivateTextOverride == null && editorId.ToUpperContainsAny("TRIGGER", "FX"))
+                if (activator.ActivateTextOverride == null || editorId.ToUpperContainsAny("TRIGGER", "FX"))
                 {
                     continue;
                 }
