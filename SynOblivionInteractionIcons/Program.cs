@@ -135,7 +135,8 @@ namespace SynOblivionInteractionIcons
                 var activateTextOverride = activator.ActivateTextOverride?.String;
 
                 //Blacklisting superfluos entries
-                if (activator.ActivateTextOverride == null || editorId.ToUpperContainsAny("TRIGGER", "FX"))
+                if (activator.FormKey.ModKey.Name.Contains("Lux")) continue;
+                if (activator.ActivateTextOverride == null && editorId.ToUpperContainsAny("TRIGGER", "FX"))
                 {
                     continue;
                 }
